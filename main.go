@@ -24,7 +24,7 @@ func main() {
 	fmt.Println("VINICIO VALBUENA in .rodata")
 	fmt.Printf("%x\n\n", "VINICIO VALBUENA in .rodata")
 
-	el, err := elf.Open(os.Args[0])
+	el, err := elf.Open("/proc/self/exe")
 	checkError(err)
 
 	section := el.Section(".rodata")
